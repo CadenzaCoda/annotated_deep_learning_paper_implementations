@@ -23,7 +23,8 @@ from torch.distributions import Categorical
 from labml import monit, tracker, logger, experiment
 from labml.configs import FloatDynamicHyperParam, IntDynamicHyperParam
 from labml_helpers.module import Module
-from labml_nn.rl.game import Worker
+# from labml_nn.rl.game import Worker
+from labml_nn.rl.mygame import Worker
 from labml_nn.rl.ppo import ClippedPPOLoss, ClippedValueFunctionLoss
 from labml_nn.rl.ppo.gae import GAE
 
@@ -162,7 +163,7 @@ class Trainer:
 
         rewards = np.zeros((self.n_workers, self.worker_steps), dtype=np.float32)
         actions = np.zeros((self.n_workers, self.worker_steps), dtype=np.int32)
-        done = np.zeros((self.n_workers, self.worker_steps), dtype=np.bool)
+        done = np.zeros((self.n_workers, self.worker_steps), dtype=bool)
         obs = np.zeros((self.n_workers, self.worker_steps, 4, 84, 84), dtype=np.uint8)
         log_pis = np.zeros((self.n_workers, self.worker_steps), dtype=np.float32)
         values = np.zeros((self.n_workers, self.worker_steps + 1), dtype=np.float32)

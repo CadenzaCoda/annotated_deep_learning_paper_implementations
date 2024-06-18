@@ -69,7 +69,7 @@ class Game:
         # run for 4 steps
         for i in range(4):
             # execute the action in the OpenAI Gym environment
-            obs, r, done, info = self.env.step(action)
+            obs, r, done, truncated, info = self.env.step(action)
 
             if i >= 2:
                 self.obs_2_max[i % 2] = self._process_obs(obs)
@@ -127,6 +127,8 @@ class Game:
         #### Process game frames
         Convert game frames to gray and rescale to 84x84
         """
+        if isinstance(obs, tuple):
+            obs = obs[0]
         obs = cv2.cvtColor(obs, cv2.COLOR_RGB2GRAY)
         obs = cv2.resize(obs, (84, 84), interpolation=cv2.INTER_AREA)
         return obs

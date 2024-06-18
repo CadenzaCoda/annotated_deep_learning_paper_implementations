@@ -1,0 +1,3 @@
+[submodule "barc_gym"]
+	path = barc_gym
+	url = git@github.com:itsjoshzhang/MPC-deep-learning-sp24.git
