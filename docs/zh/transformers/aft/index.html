@@ -3,24 +3,24 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="这是 PyTorch 中AFT（免注意变压器）的带注释的实现/教程。"/>
+    <meta name="description" content="这是一个 PyTorch实现的 AFT （无注意力 Transformer ）带注释实现/教程。"/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="免注意的变压器"/>
-    <meta name="twitter:description" content="这是 PyTorch 中AFT（免注意变压器）的带注释的实现/教程。"/>
+    <meta name="twitter:title" content="一种无注意力的 Transformer"/>
+    <meta name="twitter:description" content="这是一个 PyTorch实现的 AFT （无注意力 Transformer ）带注释实现/教程。"/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/aft/index.html"/>
-    <meta property="og:title" content="免注意的变压器"/>
+    <meta property="og:title" content="一种无注意力的 Transformer"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="免注意的变压器"/>
+    <meta property="og:site_name" content="一种无注意力的 Transformer"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="免注意的变压器"/>
-    <meta property="og:description" content="这是 PyTorch 中AFT（免注意变压器）的带注释的实现/教程。"/>
+    <meta property="og:title" content="一种无注意力的 Transformer"/>
+    <meta property="og:description" content="这是一个 PyTorch实现的 AFT （无注意力 Transformer ）带注释实现/教程。"/>
 
-    <title>免注意的变压器</title>
+    <title>一种无注意力的 Transformer</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/transformers/aft/index.html"/>
@@ -72,7 +72,7 @@
                 <a href='#section-0'>#</a>
             </div>
             <h1>一款无注意的变形金刚</h1>
-<p>这是 <a href="https://pytorch.org">PyTorch 对</a>《<a href="https://papers.labml.ai/paper/2105.14103">无注意力的变形金刚》一文的</a>实现。</p>
+<p>这是 <a href="https://pytorch.org">PyTorch 对</a>《<a href="https://arxiv.org/abs/2105.14103">无注意力的变形金刚》一文的</a>实现。</p>
 <p>本文用一种新的高效运算取代了<a href="../mha.html">自我注意力层</a>，该运算的存储复杂度为<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord coloredeq eqbl" style=""><span class="mord mathnormal" style="margin-right:0.13889em">T</span></span><span class="mord coloredeq eqbo" style=""><span class="mord mathnormal" style="">d</span></span><span class="mclose">)</span></span></span></span></span>，其中<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqbl" style=""><span class="mord mathnormal" style="margin-right:0.13889em">T</span></span></span></span></span></span>是序列长度，<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqbo" style=""><span class="mord mathnormal" style="">d</span></span></span></span></span></span>是嵌入的维度。</p>
 <p>本文介绍了 AFT 以及 AFT-Local 和 AFT-conv。这里我们实现了 aft-Local，它关注自回归模型中的 cloby 代币。</p>
 <h2>免注意变形金刚</h2>
@@ -508,7 +508,6 @@ A@@ <p>FT（类似于 <a href="../mha.html">MHA</a>）首先将嵌<span ><span c
         </div>
     </div>
     <div class='footer'>
-        <a href="https://papers.labml.ai">Trending Research Papers</a>
         <a href="https://labml.ai">labml.ai</a>
     </div>
 </div>
